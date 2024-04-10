@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario-admin {
+    @include m.contenedor-sm();
+    background-color: transparent;
+    border: 1px solid v.$blanco;
+    padding: 2rem;
+    border-radius: 1rem;
+    height: 100%;
+
+    background: #ffffff10;
+    backdrop-filter: blur(10rem);
+    --webkit-backdrop-filter: blur(40rem);
+
+    &__fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__legend--contacto {
+        color: #333; /* Color de texto oscuro */
+    }
+
+    &__campo {
+        margin: 10px 0;
+    }
+
+    &__label--contacto {
+        color: #555; /* Color de texto gris */
+    }
+
+    &__input--contacto,
+    &__textarea--contacto {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc; /* Borde gris claro */
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    &__input--contacto:focus,
+    &__textarea--contacto:focus {
+        outline: none;
+        border-color: #007bff; /* Borde azul cuando está enfocado */
+    }
+
+    &__submit {
+        background-color: #007bff; /* Botón azul */
+        color: white; /* Texto blanco */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    &__submit:hover {
+        background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+    }
+
+    &__gap {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

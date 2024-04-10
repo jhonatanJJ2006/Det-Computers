@@ -1,0 +1,140 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.dashboard {
+    background: rgba(17, 22, 128, 1);
+    background: -moz-linear-gradient(top, rgba(17, 22, 128, 1) 0%, rgba(57, 203, 240, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(17, 22, 128, 1)), color-stop(100%, rgba(57, 203, 240, 1)));
+    background: -webkit-linear-gradient(top, rgba(17, 22, 128, 1) 0%, rgba(57, 203, 240, 1) 100%);
+    background: -o-linear-gradient(top, rgba(17, 22, 128, 1) 0%, rgba(57, 203, 240, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(17, 22, 128, 1) 0%, rgba(57, 203, 240, 1) 100%);
+    background: linear-gradient(to bottom, rgba(17, 22, 128, 1) 0%, rgba(57, 203, 240, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#111680', endColorstr='#39cbf0', GradientType=0);
+
+    &__height {
+        @extend .dashboard;
+
+    }    
+
+    &__contenedor {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        height: 100%;
+    }
+
+    &__contenedor-2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__heading {
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: v.$bold;
+        font-family: v.$fuente-titulos2;
+        color: v.$blanco;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    &__logo {
+        width: 10rem;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        background-color: v.$blanco;
+        border-radius: 1rem;
+        padding: 1rem;
+
+        &--imagen {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__3d {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &--tamaño {
+            width: 100%;
+            height: 50rem;
+        }
+    }
+
+    &__boton {
+        @include m.contenedor();
+        display: flex;
+        justify-content: center;
+
+        &--watsap {
+            @include m.boton(v.$azul, v.$blanco, v.$blanco);
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            background: #ffffff10;
+            backdrop-filter: blur(1rem);
+            --webkit-backdrop-filter: blur(20rem);
+            transition-property: background-color, color;
+    
+            @include m.tablet {
+                width: auto;
+            }
+        }
+    }
+
+    &__frase {
+        position: fixed;
+        color: #ffff;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: v.$bold;
+        font-size: 2.4rem;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        animation: rotate 5s linear infinite;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes rotate {
+        0% {
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(0deg);
+        }
+        100% {
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(360deg);
+        }
+    }
+
+    &__btn {
+        color: v.$blanco;
+        background-color: transparent;
+        border: 1px solid v.$blanco;
+        border-radius: 1rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 5rem;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: v.$blanco;
+            border: 1px solid v.$negro;
+            color: v.$negro;
+        }
+    }
+}
